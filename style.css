@@ -1,0 +1,81 @@
+/* ====== ESTILO GERAL DA PÁGINA ====== */
+body {
+    font-family: Arial, sans-serif;           /* Define a fonte principal */
+    background: linear-gradient(135deg, #202020, #444); /* Fundo com gradiente escuro */
+    color: #fff;                              /* Cor padrão do texto (branca) */
+    display: flex;                            /* Flexbox para centralizar o conteúdo */
+    justify-content: center;                  /* Centraliza horizontalmente */
+    align-items: center;                      /* Centraliza verticalmente */
+    height: 100vh;                            /* Ocupa 100% da altura da tela */
+}
+
+/* ====== CONTAINER PRINCIPAL ====== */
+.container {
+    background: rgba(0, 0, 0, 0.7);           /* Fundo preto com transparência */
+    padding: 25px 30px;                       /* Espaçamento interno */
+    border-radius: 15px;                      /* Arredonda as bordas do card */
+    width: 350px;                             /* Largura fixa */
+    box-shadow: 0px 0px 15px rgba(255,255,255,0.1); /* Sombra suave */
+}
+
+/* ====== TÍTULO PRINCIPAL ====== */
+h1 {
+    text-align: center;                       /* Centraliza o texto */
+    margin-bottom: 20px;                      /* Espaço abaixo do título */
+    color: #ffcc33;                           /* Cor dourada */
+}
+
+/* ====== LABELS (TÍTULOS DOS CAMPOS) ====== */
+label {
+    display: block;                           /* Cada label ocupa uma linha */
+    margin-top: 10px;                         /* Espaçamento superior */
+    color: #ccc;                              /* Cor cinza suave */
+}
+
+/* ====== CAMPOS DE ENTRADA (INPUTS) ====== */
+input {
+    width: 100%;                              /* Ocupa toda a largura disponível */
+    padding: 8px;                             /* Espaçamento interno */
+    border: none;                             /* Remove bordas padrão */
+    border-radius: 6px;                       /* Bordas arredondadas */
+    margin-top: 5px;                          /* Espaçamento superior */
+}
+
+/* ====== BOTÃO DE AGENDAR ====== */
+button {
+    margin-top: 15px;                         /* Distância acima do botão */
+    width: 100%;                              /* Largura total */
+    padding: 10px;                            /* Tamanho do botão */
+    background-color: #ffcc33;                /* Cor de fundo (dourado) */
+    border: none;                             /* Remove bordas */
+    color: #000;                              /* Texto preto */
+    font-weight: bold;                        /* Negrito */
+    border-radius: 6px;                       /* Bordas arredondadas */
+    cursor: pointer;                          /* Mostra ícone de mão ao passar */
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover {
+    background-color: #e6b800;                /* Toma um tom mais escuro */
+}
+
+/* ====== TÍTULO DA LISTA DE AGENDAMENTOS ====== */
+h2 {
+    margin-top: 25px;                         /* Distância do conteúdo acima */
+    text-align: center;                       /* Centraliza o texto */
+}
+
+/* ====== LISTA DE AGENDAMENTOS ====== */
+ul {
+    list-style: none;                         /* Remove marcadores padrão */
+    padding: 0;                               /* Remove espaçamento interno */
+    margin-top: 10px;                         /* Espaço acima da lista */
+}
+
+/* ====== CADA ITEM EXIBIDO NA LISTA ====== */
+li {
+    background: rgba(255,255,255,0.1);        /* Fundo branco semitransparente */
+    margin: 5px 0;                            /* Espaçamento entre itens */
+    padding: 8px;                             /* Espaçamento interno */
+    border-radius: 6px;                       /* Bordas arredondadas */
+}
