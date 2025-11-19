@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Barber_Bigode</title>
+
+    <!-- Importa o arquivo CSS externo para estilização da página -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Container central onde fica todo o conteúdo -->
+    <div class="container">
+
+        <!-- Título principal da página -->
+        <h1>💈 Barber Bigode – Agendamento 💈</h1>
+
+        <!-- Formulário de agendamento -->
+        <form id="formAgendamento">
+
+            <!-- Campo: Nome do Cliente -->
+            <label>Nome do Cliente:</label>
+            <input type="text" id="nome" required>
+
+            <!-- Campo: Tipo de Corte -->
+            <label>Tipo de Corte:</label>
+            <select id="tipo" required>
+                <option value="">Selecione o tipo de corte</option>
+                <option value="social">Social</option>
+                <option value="degrade">Degrade</option>
+                <option value="militar">Militar</option>
+            </select>
+
+            <!-- Campo: Data -->
+            <label>Data:</label>
+            <input type="date" id="data" required>
+
+            <!-- Campo: Hora -->
+            <label>Hora:</label>
+            <input type="time" id="hora" required>
+
+            <!-- Botão que chama a função JavaScript para realizar o agendamento -->
+            <button type="button" onclick="agendar()">Agendar</button>
+        </form>
+
+        <!-- Título da lista de agendamentos já realizados -->
+        <h2>📋 Agendamentos</h2>
+
+        <!-- Lista que será preenchida dinamicamente pelo JavaScript -->
+        <ul id="listaAgendamentos"></ul>
+    </div>
+
+    <script>
+        // Array que armazena todos os agendamentos realizados
+        const agendamentos = [];
+
+        /**
+         * Função chamada quando o usuário clica no botão "Agendar".
+         * Coleta os valores do formulário, valida e adiciona ao array.
+         */
+        function agendar() {
+            
+            // Captura dos valores dos campos
+            const nome = document.getElementById("nome").value;
+            const tipo = document.getElementById("tipo").value;
+            const data = document.getElementById("data").value;
+            const hora = document.getElementById("hora").value;
+
+            // Verifica se todos os campos foram preenchidos
+            if (!nome || !tipo || !data || !hora) {
+                alert("Preencha todos os campos!");
+                return; // interrompe a função se algo estiver vazio
+            }
+
+            // Adiciona o novo agendamento ao array
+            agendamentos.push({ nome, tipo, data, hora });
+
+            // Atualiza a lista na tela
+            atualizarLista();
+
+            // Limpa os campos do formulário após agendar
+            document.getElementById("formAgendamento").reset();
+        }
+
+        /**
+         * Atualiza a lista de agendamentos exibida na tela.
+         * Limpa o conteúdo atual e insere os itens atualizados.
+         */
+        function atualizarLista() {
+            const lista = document.getElementById("listaAgendamentos");
+
+            // Limpa a lista antes de inserir novamente
+            lista.innerHTML = "";
+
+            // Percorre todos os agendamentos e cria itens <li> dinamicamente
+            agendamentos.forEach((a, i) => {
+                const item = document.createElement("li");
+
+                // Conteúdo que será exibido para cada agendamento
+                item.textContent = `${i + 1}. 👤 ${a.nome} | ✂️ ${a.tipo} | 📅 ${a.data} | ⏰ ${a.hora}`;
+
+                // Adiciona o item à lista
+                lista.appendChild(item);
+            });
+        }
+    </script>
+</body>
+</html>
